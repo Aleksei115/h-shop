@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const ContenedorProducto = styled.div`
@@ -11,12 +12,17 @@ const ContenedorProducto = styled.div`
 `
 
 const TituloProducto = styled.h2`
+    display: block;
+    height: 40px;
     font-size: 1.1em;
     text-align: center;
     font-weight: 500;
     margin-top: 20px;
     letter-spacing: 1.3px;
     font-style: italic;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 const ContenedorImg = styled(ContenedorProducto)`
@@ -49,11 +55,20 @@ const Precio = styled.h3`
     color: #f44336;
 `
 
+const LinkedNonStyle = styled(Link)`
+    color: black;
+    text-decoration: none;
+`
+
 export const Producto = ({ item }) => {
     return (
         <ContenedorProducto>
-            <ContenedorImg url={item.image}></ContenedorImg>
-            <TituloProducto>{item.product_name}</TituloProducto>
+            <Link to={`/${item._id}`}>
+                <ContenedorImg url={item.image}></ContenedorImg>
+            </Link>
+            <LinkedNonStyle to={`/${item._id}`}>
+                <TituloProducto>{item.product_name}</TituloProducto>
+            </LinkedNonStyle>
             <Categoria>Categoria : {item.category}</Categoria>
             <Precio>{item.price} MXN</Precio>
         </ContenedorProducto>

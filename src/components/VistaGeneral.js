@@ -21,12 +21,12 @@ const DivBanner = styled.div`
         content: 'Bienvenido a H-Shop';
         color: #262423;
         position: absolute;
-        width: 70vw;
-        height: 50px;
+        width: 100vw;
+        height: 300px;
         left: 50%;
-        margin-left: -35vw;
+        margin-left: -50vw;
         top: 50%;
-        margin-top: -200px;
+        margin-top: -150px;
         font-size: 70px;
         font-weight: 800;
         letter-spacing: 5px;

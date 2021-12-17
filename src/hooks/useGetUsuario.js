@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
-import getProductos from '../helpers/getProductos'
+import getUsuario from '../helpers/getUsuario'
 
-export const useFetchProductos = () => {
+export const useGetUsuario = () => {
     const [state, setState] = useState({
         data: [],
         loading: true,
     })
 
     useEffect(() => {
-        getProductos().then(response => {
+        getUsuario(category).then(response => {
             setState({ data: response, loading: false })
         })
-    }, [])
+    }, [category])
 
-    return state
+    return state //{ data , loading}
 }

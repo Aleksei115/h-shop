@@ -16,13 +16,10 @@ export const Global = createGlobalStyle`
 
 	*, *::after, *::before {
 		margin: 0;
+		box-sizing: border-box;
 	}
 
-	hr {
-		color: E0F7FA;
-		width: 50vw;
-		margin: 20px auto;
-	}
+
 	
 
 `

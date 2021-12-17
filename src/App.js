@@ -1,18 +1,28 @@
 import React from 'react'
 import { Outlet } from 'react-router'
-import Navbar from './components/Navbar'
+import NavbarUser from './components/nav/Navbar'
 import Productos from './components/Productos'
 import { VistaGeneral } from './components/VistaGeneral'
+import Container from 'react-bootstrap/Container'
+import { useProductos } from './hooks/useProductos'
 
 const App = () => {
+    const user = false
+    const { listaP, l } = useProductos()
+
     return (
-        <div>
-            <h1>Pagina principal</h1>
-            <Navbar />
-            <VistaGeneral />
-            <Productos />
-            <Outlet />
-        </div>
+        <Container>
+            {listaP ? (
+                <>
+                    <NavbarUser />
+                    <VistaGeneral />
+                    <Productos />
+                    <Outlet />
+                </>
+            ) : (
+                ''
+            )}
+        </Container>
     )
 }
 

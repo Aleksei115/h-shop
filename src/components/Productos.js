@@ -1,6 +1,7 @@
-import { useFetchProductos } from '../hooks/useFetchProductos'
 import { Producto } from './Producto'
 import styled from 'styled-components'
+import Spinner from 'react-bootstrap/Spinner'
+import { useProductos } from '../hooks/useProductos'
 
 const GridProductos = styled.div`
     width: 60vw;
@@ -28,17 +29,17 @@ const TituloPorductos = styled.h2`
 `
 
 const Productos = () => {
-    const state = useFetchProductos()
+    const { listaP, l } = useProductos()
     return (
         <ContenedorProductos>
             <TituloPorductos>Productos</TituloPorductos>
             <GridProductos>
-                {state.loading ? (
-                    <div>
-                        <p>Cargando</p>
-                    </div>
+                {l.loading ? (
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
                 ) : (
-                    state.data.map(item => {
+                    l.data.map(item => {
                         return <Producto item={item} key={item._id} />
                     })
                 )}
