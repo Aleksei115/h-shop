@@ -53,7 +53,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
+  "devDependencies": { 
     "babel-eslint": "*",
     "babel-plugin-styled-components": "^2.0.2",
     "eslint": "*",
@@ -61,4 +61,5 @@
     "eslint-plugin-react": "*",
     "prettier": "*"
   }
+  
 }
