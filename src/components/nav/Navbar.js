@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import TextField from '@mui/material/TextField'
 import { InputBox, StyledDir, StyledNavLink, Button, StyledUl, StyledLi, StyledContainer } from './styles'
 import { useState } from 'react'

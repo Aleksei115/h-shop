@@ -128,7 +128,7 @@ export function useUser() {
     }, [setJWT])
 
     return {
-        isLogged: Boolean(jwt) & (jwt != null),
+        isLogged: Boolean(jwt) && jwt != null,
         isLoading: state.loading,
         hasError: state.error,
         carritoCompras: carritoCompras,
